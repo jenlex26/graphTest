@@ -1,0 +1,35 @@
+6.- Explique el ciclo de vida de un view controller.
+se manejan apartir de estas fuciones 
+
+ViewDidLoad: se llama cuando crea la clase y la carga desde xib. Ideal para la configuración inicial y el trabajo de una sola vez.
+
+ViewWillAppear - Llamado justo antes de que aparezca su vista, esto se activará cada vez que su vista aparezca en la pantalla.
+
+ViewDidAppear - Llamado después de que aparezca la vista.
+
+ViewWillDisappear/DidDisappear - La misma idea que ViewWillAppear/ViewDidAppear.
+
+
+7.- Explique el ciclo de vida de una aplicación.
+
+foreground
+- inactive 
+
+-  active
+
+ background
+
+ - background
+
+ - suspended
+
+
+8.- En que casos se usa un weak, un strong y un unowned.
+
+
+9.- ¿Qué es el ARC?
+
+El contador de referencias automático es una funcionalidad que permite liberar la memoria de aquellos elementos que no posean referencias fuertes hacia ellos
+
+10 punto extra
+primero se miraria amarillo por declararlo en el app delegate y despues rojo por que lo estas declarando en el viewdidload de la vista mostrada

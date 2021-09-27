@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Graph View-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DetailGraphView" id="Y6W-OH-hqX" customClass="DetailGraphView" customModule="graphTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TXR-EJ-z0q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GraphDetailViewCell" rowHeight="580" id="U8y-pS-i8I" customClass="GraphDetailViewCell" customModule="graphTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="580"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U8y-pS-i8I" id="lCZ-UX-7T8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="580"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="FdF-NI-Lq5">
+                                                    <rect key="frame" x="40" y="21" width="334" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HD-Va-ycD" customClass="PieChartView" customModule="Charts">
+                                                    <rect key="frame" x="0.0" y="51.5" width="414" height="517.5"/>
+                                                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9HD-Va-ycD" firstAttribute="leading" secondItem="lCZ-UX-7T8" secondAttribute="leading" id="2pq-VT-vWs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FdF-NI-Lq5" secondAttribute="trailing" constant="20" id="9bk-eR-alI"/>
+                                                <constraint firstItem="FdF-NI-Lq5" firstAttribute="leading" secondItem="lCZ-UX-7T8" secondAttribute="leadingMargin" constant="20" id="ObK-Q9-oDV"/>
+                                                <constraint firstItem="9HD-Va-ycD" firstAttribute="bottom" secondItem="lCZ-UX-7T8" secondAttribute="bottomMargin" id="RVq-lc-6qL"/>
+                                                <constraint firstAttribute="trailing" secondItem="9HD-Va-ycD" secondAttribute="trailing" id="XBG-Jh-hVl"/>
+                                                <constraint firstItem="FdF-NI-Lq5" firstAttribute="top" secondItem="lCZ-UX-7T8" secondAttribute="topMargin" constant="10" id="o7m-mv-OJh"/>
+                                                <constraint firstItem="9HD-Va-ycD" firstAttribute="top" secondItem="FdF-NI-Lq5" secondAttribute="bottom" constant="10" id="uHo-yM-emT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pieChart" destination="9HD-Va-ycD" id="hB8-Hs-wqg"/>
+                                            <outlet property="titleLabel" destination="FdF-NI-Lq5" id="ijm-FZ-aPt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="GYD-Da-iXa"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="qS0-dy-lfH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TXR-EJ-z0q" secondAttribute="bottom" constant="-34" id="1KO-yT-jpG"/>
+                            <constraint firstItem="TXR-EJ-z0q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9rL-i6-9nA"/>
+                            <constraint firstItem="TXR-EJ-z0q" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="Zmj-1e-Pvw"/>
+                            <constraint firstAttribute="trailing" secondItem="TXR-EJ-z0q" secondAttribute="trailing" id="ilv-ZG-ejc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="TXR-EJ-z0q" id="zxP-k7-iBa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2.8985507246376816" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
