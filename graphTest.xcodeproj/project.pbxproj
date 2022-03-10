@@ -509,6 +509,7 @@
 				DEVELOPMENT_TEAM = J568R2D5F6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = graphTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "use camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -519,7 +520,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.graphTest.graphTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -538,6 +539,7 @@
 				DEVELOPMENT_TEAM = J568R2D5F6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = graphTest/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "use camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -548,7 +550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.graphTest.graphTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
