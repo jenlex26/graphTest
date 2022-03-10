@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseStorage
-
+import FirebaseDatabase
 /*
  View: displays what it is told to by the Presenter and relays user input back to the Presenter, the View is passive. It waits for the Presenter to give it content to display.
  
@@ -25,6 +25,9 @@ class DashboardView: UIViewController {
     
     // MARK: Properties
     var presenter: DashboardViewToPresenterProtocol?
+    let dbController = FirebaseDatabaseController()
+    
+//    var ref : DatabaseReference!
     
 //    private let storage = Storage.storage().reference()
     var imageReference: StorageReference {
@@ -40,6 +43,7 @@ class DashboardView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        ref =  Database.database().reference()
         setup()
         presenter?.didLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -51,6 +55,19 @@ class DashboardView: UIViewController {
     
     func setup() {
         // Do any aditional setup after loading the view ex: View properties, navigation properties, etc.
+        dbController.observe(endpoint: "hex") { snapshot in
+            guard snapshot.exists() else { return }
+            let dictionaryValue = snapshot.value as? String
+            let stringValue = dictionaryValue
+            Listener.shared.dataString = stringValue
+            if stringValue!.contains("#"){
+                self.view.backgroundColor = UIColor(hex: stringValue!)
+            }else{
+                self.view.backgroundColor = UIColor(hex: "#DCDCDC")
+            }
+            
+            NotificationCenter.default.post(name: .testKey, object: nil)
+        }
     }
     
     func numberRandom(digits:Int) -> String{
@@ -156,6 +173,10 @@ class DashboardView: UIViewController {
         return imageData!
     }
 
+}
+
+extension Notification.Name {
+    static let testKey = Notification.Name.init(rawValue: "testValueNotification")
 }
 
 

@@ -1,5 +1,5 @@
 6.- Explique el ciclo de vida de un view controller.
-se manejan apartir de estas fuciones 
+se manejan apartir de estas funciones 
 
 ViewDidLoad: se llama cuando crea la clase y la carga desde xib. Ideal para la configuración inicial y el trabajo de una sola vez.
 

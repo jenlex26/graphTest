@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		927D16522702778200843899 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 927D16512702778200843899 /* IQKeyboardManagerSwift */; };
+		928D9C9C27DA796F0075A42F /* FirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D9C9B27DA796F0075A42F /* FirebaseDatabase.swift */; };
+		928D9C9F27DA798B0075A42F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 928D9C9E27DA798B0075A42F /* FirebaseDatabase */; };
+		928D9CA127DA7B640075A42F /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D9CA027DA7B640075A42F /* Listener.swift */; };
 		92B29BEB26FCEFA900034736 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B29BEA26FCEFA900034736 /* AppDelegate.swift */; };
 		92B29BF226FCEFA900034736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B29BF026FCEFA900034736 /* Main.storyboard */; };
 		92B29BF426FCEFAC00034736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B29BF326FCEFAC00034736 /* Assets.xcassets */; };
@@ -43,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		928D9C9B27DA796F0075A42F /* FirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabase.swift; sourceTree = "<group>"; };
+		928D9CA027DA7B640075A42F /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		92B29BE726FCEFA900034736 /* graphTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graphTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B29BEA26FCEFA900034736 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92B29BF126FCEFA900034736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 				92B29C2726FE375800034736 /* Charts in Frameworks */,
 				92B29C4D26FE7BD500034736 /* FirebaseStorage in Frameworks */,
 				92B29C4926FE7BD500034736 /* FirebaseAnalytics in Frameworks */,
+				928D9C9F27DA798B0075A42F /* FirebaseDatabase in Frameworks */,
 				927D16522702778200843899 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,12 +97,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		928D9C9D27DA798B0075A42F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92B29BDE26FCEFA900034736 = {
 			isa = PBXGroup;
 			children = (
 				92B29C4E26FE7CDB00034736 /* GoogleService-Info.plist */,
 				92B29BE926FCEFA900034736 /* graphTest */,
 				92B29BE826FCEFA900034736 /* Products */,
+				928D9C9D27DA798B0075A42F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				92B29C1B26FD003A00034736 /* DataManager */,
+				928D9C9B27DA796F0075A42F /* FirebaseDatabase.swift */,
+				928D9CA027DA7B640075A42F /* Listener.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -253,6 +269,7 @@
 				92B29C4A26FE7BD500034736 /* FirebaseCrashlytics */,
 				92B29C4C26FE7BD500034736 /* FirebaseStorage */,
 				927D16512702778200843899 /* IQKeyboardManagerSwift */,
+				928D9C9E27DA798B0075A42F /* FirebaseDatabase */,
 			);
 			productName = graphTest;
 			productReference = 92B29BE726FCEFA900034736 /* graphTest.app */;
@@ -333,10 +350,12 @@
 				92B29C1726FCFD8C00034736 /* GraphDetailViewCell.swift in Sources */,
 				92B29C3326FE4A0C00034736 /* DetailGraphPresenter.swift in Sources */,
 				92B29C1226FCF59500034736 /* DashboardEntity.swift in Sources */,
+				928D9C9C27DA796F0075A42F /* FirebaseDatabase.swift in Sources */,
 				92B29C1D26FD00CB00034736 /* DataManager.swift in Sources */,
 				92B29C0D26FCF59500034736 /* DashboardPresenter.swift in Sources */,
 				92B29C3726FE4A0C00034736 /* DetailGraphView.swift in Sources */,
 				92B29C1026FCF59500034736 /* DashboardInteractor.swift in Sources */,
+				928D9CA127DA7B640075A42F /* Listener.swift in Sources */,
 				92B29C1F26FD8F9300034736 /* PhotoViewCell.swift in Sources */,
 				92B29C3526FE4A0C00034736 /* DetailGraphProtocols.swift in Sources */,
 			);
@@ -601,6 +620,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 927D16502702778200843899 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		928D9C9E27DA798B0075A42F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92B29C4726FE7BD500034736 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 		92B29C1926FD002400034736 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
